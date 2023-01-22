@@ -25,7 +25,7 @@ public class Main {
 			ObjectMapper mapper = new ObjectMapper();
 			SimpleModule module = new SimpleModule();
 			module.addDeserializer(UserData.class, new UserDataDeserializer());
-			mapper.registerModule(module); 
+			mapper.registerModule(module);
 			UserProfileModel model = mapper.readValue(body, UserProfileModel.class);
 			System.out.println(model.getProfile().getUserData().getUserDataContent());
 		} catch (JsonProcessingException e) {
@@ -35,6 +35,6 @@ public class Main {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 	}
 }
